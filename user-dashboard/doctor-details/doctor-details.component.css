@@ -1,0 +1,145 @@
+
+.details{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    background-color: #fff;
+    /* padding-top: 10rem; */
+}
+.details .image{
+    flex:1 1 30rem;
+    
+}
+
+.details .image img{
+    width: 380px;
+    height: 380px;
+}
+
+.details .content{
+    flex:1 1 45rem;
+    padding-top:5px ;
+}
+
+.details .content h3{
+    font-size: 2.5rem;
+    color:var(--black);
+    /* line-height: 1.8; */
+    /* text-shadow: var(--text-shadow); */
+    padding-bottom:10px ;
+
+}
+
+.details .content p{
+    font-size: 1.7rem;
+    color:var(--light-color);
+    line-height: 1.8;
+    /* padding: 1rem 0; */
+}
+
+
+
+
+
+.livechat-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 1.5rem;
+
+}
+.livechat-text h2{
+ font-size: 3rem;
+ margin-bottom: 1rem;
+}
+.livechat-text p{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+   }
+.livechat-content form{
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+    column-gap: 1rem;
+}
+.livechat-content form input{
+    /* border: none; */
+    /* padding: 15px; */
+    /* outline-color: var(--main-color); */
+    /* border-radius: 0.5rem; */
+    /* font-size: 2rem; */
+    /* color: var(--text-color); */
+    margin-top: 5px;
+}
+
+.livechat-content form input::placeholder{
+  font-size: 1.5rem;
+  /* padding-left: 0.5rem; */
+  /* background-color: rgb(239, 239, 254); */
+  /* border: solid #2b734b; */
+}
+
+.review .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap:2rem;
+}
+
+.review .box-container .box{
+    /* border:var(--border); */
+    /* box-shadow: var(--box-shadow); */
+    border-radius: .5rem;
+    padding:2.5rem;
+    background: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.review .box-container .box img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border:.5rem solid #fff;
+}
+
+.review .box-container .box h3{
+    color:rgb(158, 30, 30);
+    font-size: 2.2rem;
+    padding:.5rem 0;
+}
+
+.review .box-container .box .stars i{
+    color:rgb(241, 233, 0);
+    font-size: 1.5rem;
+}
+
+.review .box-container .box .text{
+    color:var(--light-color);
+    line-height: 1.8;
+    font-size: 1.6rem;
+    padding-top: 0.2rem;
+}
+
+.review .box-container .box::before{
+    content: '';
+    position: absolute;
+    top:-4rem; left: 50%;
+    transform:translateX(-50%);
+    /* background:#2b734b; */
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    height: 25rem;
+    width: 120%;
+    z-index: -1;
+}
+@media (max-width:768px) {
+    /* .details .image img{
+        width: 380px;
+    } */
+    .livechat-content .btn{
+     width: 60px;
+    }
+}

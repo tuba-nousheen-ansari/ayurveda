@@ -1,0 +1,52 @@
+<!-- footer section starts  -->
+<!-- rgb(217, 246, 194) -->
+<!-- rgb(223, 245, 206) -->
+<!-- for presentation color rgb(242, 251, 232) -->
+
+<section class="footer" style="background: rgb(217, 246, 194) ;" >
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-chevron-right"></i> home </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> doctors </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> book appointment </a>
+        </div>
+
+
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +917772860260 </a>
+            <a href="#"> <i class="fas fa-envelope"></i>ayurveda@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Indore, india - 452005</a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="https://m.facebook.com/people/Garvit-Pathak/100013264411912/?comment_id=Y29tbWVudDoyMTU1NjAxOTkxOTUxMTNfMjI0OTQxMTExNTkwMzU1"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="https://www.instagram.com/accounts/login/?next=/_garvit_pandit_/"> <i class="fab fa-instagram"></i> instagram </a>
+        </div>
+        <div class="box">
+            <h3>for any query</h3>
+            <!-- <a href="https://m.facebook.com/people/Garvit-Pathak/100013264411912/?comment_id=Y29tbWVudDoyMTU1NjAxOTkxOTUxMTNfMjI0OTQxMTExNTkwMzU1"> <i class="fab fa-facebook-f"></i> facebook </a> -->
+            <!-- <a href="#"> <i class="fab fa-twitter"></i> twitter </a> -->
+            <!-- <a href="https://www.instagram.com/accounts/login/?next=/_garvit_pandit_/"> <i class="fab fa-instagram"></i> instagram </a> -->
+            <!-- <input type="text" name="" placeholder="query.." id=""> -->
+            <!-- <a  class="btn">send</a> -->
+            <form action="">
+                <input type="email" [(ngModel)]='query1.email' name="email" placeholder="enter your email" id="">
+                <input type="text" [(ngModel)]='query1.query' name="query" placeholder="enter your query" id="">
+
+                <input style="text-align: center;" type="submit" value="submit  " (click)='send()' class="btn">
+            </form>
+        </div>
+    </div>
+
+    <div class="credit"> created by <span>bug busters</span> | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->

@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+<section class="doctors" id="doctors">
+
+    <h1 class="heading" style="padding-top: 100px;"> our <span>doctors</span> </h1>
+    <div class="container" >
+        <form action="" class="search-form" id="search" style="margin: 0 auto;" #search>
+            <input type="search" (change)="navigate($event)" placeholder="search here..." id="search-box">
+            <label for="search-box" ><i style="font-size: 30px;margin-top: 10px;" (click)="voice()"  class='bx bxs-microphone'></i></label>
+        </form>
+    </div>
+    <div class="box-container">
+        <div class="box" *ngFor="let list of doctorList| paginate
+        : {
+            itemsPerPage: cardSize,
+            currentPage: page,
+            totalItems: count
+          }">
+            <div class="image">
+                <img src={{list.image}} alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+
+                    <a > <i class="fas fa-calendar"></i> experience {{list.experience}}  </a>
+                    <a > <i class="fas fa-user"></i> verified </a>
+
+                </div>
+                <h3 style="text-overflow: hidden;overflow:hidden;white-space: nowrap;">{{list.name}}</h3>
+                <p style="text-overflow: hidden;overflow:hidden;white-space: nowrap;">{{list.speciality}}</p>
+                <h4><a (click)="viewDetails(list._id)">more info>> </a> </h4>
+                <a (click)="appoin(list._id)" class="btn">book appointment<span class="fas fa-chevron-right"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class=" justify-content-center pagination">
+        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onCardDataChange($event)">
+        </pagination-controls>
+    </div>
+</section>
+<router-outlet></router-outlet>
+<!-- <ngx-spinner  bdColor="white" template="<img src='https://c.tenor.com/HT-Xm8vgUysAAAAC/load.gif' />" ><ngx-spinner>
+     -->
+<!-- <ngx-spinner ></ngx-spinner> -->
+<ngx-spinner bdColor="white" template="<img style = height:70px;
+src='https://c.tenor.com/HT-Xm8vgUysAAAAC/load.gif' />">
+    <ngx-spinner>

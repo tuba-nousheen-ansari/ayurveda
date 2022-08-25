@@ -1,0 +1,245 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+<section class="intro" *ngIf="disList._id" style="margin-top:30px ;" id="intro">
+
+    <div class="image">
+        <img src="{{disList.image}}" alt="">
+        <h3>{{disList.name}}</h3>
+
+    </div>
+
+    <div class="content ">
+
+        <div class="box-container">
+            <a href="diseases/{{disList.name}}/#causes">
+                <div class="box" style="background-color: rgb(217, 246, 194) ">
+                    <i><img style="margin-left: 22px;" src="../../../assets/image/causes.png" alt=""></i>
+
+                    <h4 style="margin-left: 25px;padding-top: 10px;"> causes</h4>
+                </div>
+            </a>
+            <a href="diseases/{{disList.name}}/#remedies">
+                <div class="box">
+                    <i><img  style="margin-left: 22px;" src="../../../assets/image/ayurvedic-medicine.png" alt=""></i>
+                    <h4 style="margin-left: 28px;padding-top: 10px;">home remdies</h4>
+                </div>
+            </a>
+
+            <a href="diseases/{{disList.name}}/#yoga">
+                <div class="box" style="background-color: rgb(217, 246, 194) ">
+                    <i><img  style="margin-left: 22px;"  src="../../../assets/image/hinduist-yoga-position.png" alt=""></i>
+                    <h4 style="margin-left: 15px;padding-top: 10px;">yoga videos</h4>
+                </div>
+            </a>
+            <a href="diseases/{{disList.name}}/#medicines">
+                <div class="box">
+                    <i><img style="height:70px ;margin-left: 22px;" src="../../../assets/image/herbal-medicine.png" alt=""></i>
+                    <h4 style="margin-left: 19px;padding-top: 10px;">ayurvedic medicines</h4>
+                </div>
+            </a>
+
+            <a href="diseases/{{disList.name}}/#precaution">
+                <div class="box" style="background-color: rgb(217, 246, 194)">
+                    <i><img style="height:70px ;margin-left: 22px;" src="../../../assets/image/warning.png" alt=""></i>
+                    <h4 style="margin-left: 20px;padding-top: 10px;">precaution</h4>
+                </div>
+            </a>
+            <a href="diseases/{{disList.name}}/#doctors">
+                <div class="box">
+                    <i><img  style="margin-left: 22px;" src="../../../assets/image/patient.png" alt=""></i>
+                    <h4 style="margin-left: 28px;padding-top: 10px;">expert doctors</h4>
+                </div>
+            </a>
+
+
+
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- home section starts  -->
+<div class="cau" id="causes" >
+<section class="causes" *ngIf="disList._id" style="background-color: rgb(217, 246, 194); margin-top:100px ;" >
+
+    <!-- <div class="image">
+        <img src="{{disList.image}}" alt="">
+        <h3>{{disList.name}}</h3>
+        <h3>{{disList._id}}</h3>
+
+    </div> -->
+
+    <div class="content">
+        <h3 class="heading">Causes</h3>
+        <p style="justify-content: center;" >{{disList.causes}}</p>
+
+    </div>
+
+</section>
+</div>
+
+
+
+<div class="rem" id="remedies" >
+<section class="remedies" style="margin-top: 80px;"  *ngIf="disList._id" >
+
+    <h3 class="heading"> home remedies </h3>
+
+    <div class="box-container">
+
+        <div class="box">
+            <p style=" text-align: justify;">{{disList.homeRemedies}}</p>
+
+        </div>
+
+
+    </div>
+
+</section>
+</div>
+
+<div class="vi" id="yoga" >
+<section  class="videos"   style="background-color: #fff;margin-top: 40px;" *ngIf="show && disList._id" #yoga>
+    <h1 class="heading"> yoga </h1>
+
+    <div class="box-container">
+        <!-- <div class="box" >
+            <div class="static">
+           <img src="../../assets/image/yoga_svg.svg2.svg" alt="">
+        </div>
+        </div> -->
+        <div class="box">
+
+
+            <div class="image">
+                <iframe [src]="link | safe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+</div>
+
+
+
+<div class="med" id="medicines" >
+<script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+
+<section *ngIf="disList._id" class="medicines" style="background: #fff;margin-top: 50px;"  #medicine>
+
+    <h1 class="heading"> medicines </h1>
+
+
+    <div class="container" style="padding-bottom: 50px; padding-left: 35rem;">
+
+    </div>
+    <div class="box-container">
+
+
+        <div class="box" *ngFor="let med of medicines| slice:0:3">
+
+            <img  src="{{med.mId.image}}" alt="">
+            <h3 style="text-overflow: hidden;overflow:hidden;white-space: nowrap;" >{{med.mId.name}}</h3>
+            <span  style="font-size: 2rem; " >₹{{med.mId.price}}</span>
+            <p style="text-overflow: hidden;overflow:hidden;white-space: nowrap;font-size: 18px;" >{{med.mId.description}}</p>
+
+            <div class="share">
+                <h4><a (click)="viewDetails(med.mId._id)">more info >></a></h4>
+                <a (click)='add(med.mId._id)' class="btn"> add to cart <i class='bx bxs-cart-add '></i> </a>
+
+            </div>
+        </div>
+        <h1 class="title"> <a href="medicines">view all >></a> </h1>
+
+
+
+    </div>
+
+</section>
+</div>
+
+
+
+
+<div class="rem" id="precaution" >
+<section class="remedies" *ngIf="disList._id" style="background-color: #fff;margin-top:100px ;" >
+
+    <h1 class="heading"> precaution</h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <p style=" text-align: justify;" >{{disList.precaution}}</p>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<!-- doctors section starts  -->
+<div class="doc" id="doctors" >
+<section class="doctors" *ngIf="disList._id" style="background: #fff;" id="doctors">
+
+    <h1 class="heading"> doctors </h1>
+
+    <div class="box-container">
+
+        <div class="box" *ngFor="let doc of doctor | slice:0:3">
+            <div class="image">
+                <img src="{{doc.image}}" alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a> <i class="fas fa-calendar"></i> experience {{doc.experience}} </a>
+                    <a> <i class="fas fa-user"></i> verified </a>
+                </div>
+
+                <h3 style="text-overflow: hidden;overflow:hidden;white-space: nowrap;">{{doc.name}}</h3>
+                <p style="text-overflow: hidden;overflow:hidden;white-space: nowrap;">{{doc.speciality}}</p>
+                <a (click)="appoin(doc._id)" class="btn">book appointment<span class="fas fa-chevron-right"></span> </a>
+
+            </div>
+        </div>
+
+        <h1 class="title"> <a href="doctors">view all >></a> </h1>
+
+    </div>
+
+</section>
+</div>
+<section class="livechat" *ngIf="disList._id" >
+    <div class="livechat-content container">
+        <div class="livechat-text">
+            <h2>Review!</h2>
+            <p>Your valueable review can help others.share your review if we help you through our multiple health care solutions. </p>
+        </div>
+        <form action="">
+            <input type="text" [(ngModel)]='reviewText' name="text" id="" placeholder="review.." reuired>
+            <input type="submit" (click)='review()' value="send" class="btn">
+        </form>
+    </div>
+</section>
+<div class="errPage"  *ngIf="!disList._id">
+<h5>404 Error </h5>
+<p class="zoom-area"><b>you are searching for which disease is  not found </b>  </p>
+<section class="error-container">
+  <span class="four"><span class="screen-reader-text">4</span></span>
+  <span class="zero"><span class="screen-reader-text">0</span></span>
+  <span class="four"><span class="screen-reader-text">4</span></span>
+</section>
+</div>
+<!-- <hr> -->
+<!-- doctors section ends -->
+
+<router-outlet></router-outlet>
+
+<ngx-spinner bdColor="white" template="<img style = height:70px;
+src='https://c.tenor.com/HT-Xm8vgUysAAAAC/load.gif ' />">
+    <ngx-spinner>

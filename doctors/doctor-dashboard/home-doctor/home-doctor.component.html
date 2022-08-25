@@ -1,0 +1,50 @@
+<p>appointments works!</p>
+<p>appointments works!</p>
+<p>appointments works!</p>
+<p>appointments works!</p>
+
+<!-- 
+<div class="container mt-5">
+    <div class="row ">
+        <div class="col-4" *ngFor="let appoint of viewAppoinments;">
+            <div class="card border-success mb-4 grid-container" style="max-width: 25rem; border: .2rem solid var(--green) ">
+
+                <div class=" card-header " style="background-color: rgb(230, 252, 213);">
+                    <h1 style="text-align: center;">{{appoint.patientName}}</h1>
+                </div>
+                <div class="card-body text-success ">
+                    <h5 class="card-title ">
+                        <h5>Age:{{appoint.age}}</h5>
+                    </h5>
+                    <p class="card-text ">{{appoint.disease}}</p>
+                    <p class="card-text ">{{appoint.mobile}}</p>
+                    <p class="card-text ">{{appoint.date}}</p>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div> -->
+
+
+    
+    <section class="medicines" id="medicines" style="background-color: #fff;" >
+    <h1 class="heading"  style="padding-top: 20px;" > your <span>Appointments</span> </h1>
+   
+    <div class="box-container"  >
+        <div class="box" *ngFor="let appoint of viewAppoinments;">
+            <h3 style="text-align: center;">pateint name: {{appoint.patientName}}</h3>
+
+            <span>Age:{{appoint.age}}</span>
+
+            <p class="card-text "> disease :{{appoint.disease}}</p>
+                    <p class="card-text ">pateint number :{{appoint.mobile}}</p>
+                    <p class="card-text "> appointment date :{{appoint.date}}</p>
+            
+        </div>
+    </div>
+   
+    
+</section>
